@@ -46,8 +46,8 @@
              </td>
           </tr>
           @php
-            @ide += 1;
-          @endphp
+            $ide += 1;
+          @endphp 
            @endforeach
          
         </tbody>

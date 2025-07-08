@@ -24,7 +24,7 @@
 
     <ul>
 
-        @foreach (errors->all() as $error)
+        @foreach ($errors->all() as $error)
          <li class="alert alert-danger">
             {{ $error }}
          </li>
@@ -44,8 +44,8 @@
     </div>
      <br>
     <div class="form-group">
-        <label for="postnom">Post-Nom</label>
-           <input type="text" id="postnom" name="postnom" class="form-control" placeholder="Post-Nom">
+        <label for="postnom">Prénom</label>
+           <input type="text" id="prenom" name="prenom" class="form-control" placeholder="Post-Nom">
     </div>
     <br>
     <div class="form-group">

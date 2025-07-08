@@ -18,4 +18,4 @@ Route::get('/delete-etudiant/{id}', [EtudiantController::class, 'delete_etudiant
 Route::get('/udate-etudiant/{id}', [EtudiantController::class, 'update_etudiant']);
 Route::get('/udate/traitement', [EtudiantController::class, 'update_etudiant_traitement']);
 Route::get('/ajouter', [EtudiantController::class, 'ajouter_etudiant']);
-Route::get('/ajouter/traitement', [EtudiantController::class, 'ajouter_etudiant_traitement']);
+Route::post('/ajouter/traitement', [EtudiantController::class, 'ajouter_etudiant_traitement']);
