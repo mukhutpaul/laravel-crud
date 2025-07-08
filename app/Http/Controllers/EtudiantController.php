@@ -1,0 +1,78 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+use App\Models\Etudiant;
+
+
+class EtudiantController extends Controller
+{
+    //
+    public function liste_etudiant()
+    {
+        $etudiants = Etudiant::paginate(4);
+
+        return view('etudiant/liste',compact('etudiants'));
+    } 
+
+    public function ajouter_etudiant()
+    {
+        return view('etudiant/ajouter');
+    } 
+
+    public function ajouter_etudiant_traitement(){
+
+        $request->validate([
+            'nom' => 'required',
+            'prenom' => 'required',
+            'classe' => 'required',
+        ]);
+
+        $etudiant = new Etudiant();
+
+        $etudieant->nom = $request->nom;
+        $etudieant->prenom = $request->prenom;
+        $etudieant->classe = $request->classe;
+
+        $etudiant->save();
+
+        return redirect('/ajouter')->with('status','L\'étudiant a été ajouté avec succès');
+
+    }
+
+    public function update_etudiant($id){
+        $etudiants = Etudiant::find($id);
+        return view('etudiant/update',compact('etudiants'));
+    }
+
+    public function update_etudiant_traitement($id){
+
+         $request->validate([
+            'nom' => 'required',
+            'prenom' => 'required',
+            'classe' => 'required',
+        ]);
+        $etudieant = Etudiant::find($request->id);
+        $etudieant->nom = $request->nom;
+        $etudieant->prenom = $request->prenom;
+        $etudieant->classe = $request->classe;
+
+        $etudiant->update();
+
+        return redirect('/etudiant')->with('status','L\'étudiant a été modifié avec succès');
+
+    }
+
+    public function delete_etudiant($id){
+        
+        $etudieant = Etudiant::find($request->id);
+
+         $etudieant->delete();
+
+        return redirect('/etudiant')->with('status','L\'étudiant a été supprimé avec succès');
+
+    }
+
+    
+}
