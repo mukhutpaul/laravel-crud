@@ -41,7 +41,7 @@
             <td>{{ $etudiant->prenom }}</td>
             <td>{{ $etudiant->classe }}</td>
              <td>
-              <a href="/udate-etudiant/{{ $etudiant->id }}" class="btn btn-info">Update</a>
+              <a href="/update-etudiant/{{ $etudiant->id }}" class="btn btn-info">Update</a>
               <a href="/delete-etudiant/{{ $etudiant->id }}" class="btn btn-danger">Delete</a>
              </td>
           </tr>

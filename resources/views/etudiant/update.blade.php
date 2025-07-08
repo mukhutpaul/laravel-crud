@@ -36,9 +36,7 @@
 
     </ul>
     
-
-
-    <form action="update/traitement" method="post">
+    <form action="/update/traitement" method="post">
         @csrf
 
         <input type="text" name="id" style="display:none;" value="{{ $etudiants->id }}">

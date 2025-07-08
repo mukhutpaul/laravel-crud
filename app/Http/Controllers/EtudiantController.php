@@ -48,17 +48,17 @@ class EtudiantController extends Controller
         return view('etudiant/update',compact('etudiants'));
     }
 
-    public function update_etudiant_traitement($id){
+    public function update_etudiant_traitement(Request $request){
 
          $request->validate([
             'nom' => 'required',
             'prenom' => 'required',
             'classe' => 'required',
         ]);
-        $etudieant = Etudiant::find($request->id);
-        $etudieant->nom = $request->nom;
-        $etudieant->prenom = $request->prenom;
-        $etudieant->classe = $request->classe;
+        $etudiant = Etudiant::find($request->id);
+        $etudiant->nom = $request->nom;
+        $etudiant->prenom = $request->prenom;
+        $etudiant->classe = $request->classe;
 
         $etudiant->update();
 
