@@ -43,8 +43,9 @@ class EtudiantController extends Controller
 
     public function update_etudiant($id){
         $etudiants = Etudiant::find($id);
-        return view('etudiant/liste',compact('etudiants'));
-        #return view('etudiant/update',compact('etudiants'));
+       
+        
+        return view('etudiant/update',compact('etudiants'));
     }
 
     public function update_etudiant_traitement($id){
